@@ -8,10 +8,9 @@ function double($number) {
     $result = $number * 2;
     
     return $result;
-
 }
 
-echo double();
+echo double(5);
 
 
 /*$a と $b を仮引数に持ち、　
@@ -24,7 +23,7 @@ function add($a, $b){
     return $result;
 }
 
-echo add();
+echo add(10, 15);
 
 
 /*$arr という配列の仮引数を持ち、数値が入った配列array(1, 3, 5 ,7, 9) を渡すと
@@ -33,7 +32,7 @@ echo add();
 
 function mul($arr){
     
-     $result =1;
+     $result = 1;
      
      foreach($arr as $array){
      
@@ -41,11 +40,9 @@ function mul($arr){
      }
      
      return $result;
-     
 }
 
 echo mul(array(1, 3, 5, 7, 9));
-
 
 
 
@@ -67,4 +64,50 @@ function max_array($arr){
   return $max_number;
 }
 
-echo max_array(array());
+echo max_array(array(1, 5, 10, 7));
+
+/*strip_tags*/
+$text = "<h1>tech boost</h1><a helf = http://xxx> link </a>";
+
+echo strip_tags($text);
+echo "\n";
+
+
+/*array_push*/
+
+$arr = array(5, 10, 15);
+
+$result = 0;
+
+array_push($arr, 2, 5);
+
+foreach($arr as $a) {
+    
+    $result = $result + $a;
+
+}
+
+echo $result;
+
+
+
+/*array_merge*/
+
+$color1 = ["red", "green", "blue"];
+$color2 = ["yellow", "orange", "pulple"];
+$color = array_merge($color1, $color2);
+
+for ($i = 0; $i < count($color); $i++) {
+  echo $color[$i];
+  echo"\n";
+}
+
+
+/*time, mktime*/ /*date*/
+
+$day = (date("Y年m月d日", time()));
+
+$today = "今日は". $day . "です";
+
+echo $today;
+
